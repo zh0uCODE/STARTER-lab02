@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     initial_size = argc - 1;
     for (int i = 1; i < argc; i++) {
         int value = atoi(argv[i]);
-        list1.append(value);
+        list1.push_back(value);
         if (i == 1)
             first = value;
         if (i == 2)
@@ -50,8 +50,8 @@ int main(int argc, char *argv[]) {
     cout.setf(ios::showpoint);
     cout.precision(3);
     cout << "   average: " << list1.average() << endl;
-    cout << "   List after insertFirst(sum): \n   ";
-    list1.insertFirst(sum);
+    cout << "   List after push_front(sum): \n   ";
+    list1.push_front(sum);
     list1.print();
     cout << endl;
 
@@ -64,11 +64,11 @@ int main(int argc, char *argv[]) {
         << (list2.contains(1)? "yes" : "no") << endl;
     cout << "   max: " << list2.max() << endl;
     cout << "   average: " << list2.average() << endl;
-    cout << "   List 2 after insertFirst(3), then insertFirst(1): \n   ";
-    list2.insertFirst(3);
-    list2.insertFirst(1);
+    cout << "   List 2 after push_front(3), then push_front(1): \n   ";
+    list2.push_front(3);
+    list2.push_front(1);
     list2.print();
     cout << endl;
-
+    // Write your own test code for other methods
     return 0;
 }

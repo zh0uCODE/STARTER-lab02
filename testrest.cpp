@@ -12,15 +12,15 @@ using namespace std;
 void test_copyconstructor(){
     IntList list1;
     int arr[] ={10, 50, 60, 70, 100};
-    for(int i = 0; i<5; i++){
-        list1.append(arr[i]);
+    for(int i = 0; i < 5; i++){
+        list1.push_back(arr[i]);
     }
 
     IntList list2(list1);
     assert(list1.count()== 5);
     assert(list2.count()==list1.count());
     for(int i = 0; i<5; i++){
-        list1.append(2*arr[i]);
+        list1.push_back(2*arr[i]);
     }
     assert(list1.count()== 10);
     assert(list2.count()== 5);
@@ -29,10 +29,10 @@ void test_copyconstructor(){
 
 
 void test_destructor(){
-    IntList *list1 = new IntList;
+    IntList* list1 = new IntList;
     int arr[] ={10, 50, 60, 70, 100};
     for(int i = 0; i<5; i++){
-        list1->append(arr[i]);
+        list1->push_back(arr[i]);
     }
 
     delete list1;
@@ -42,16 +42,16 @@ void test_assignmentOperator(){
     IntList list1, list2;
     int arr[] ={10, 50, 60, 70, 100};
     for(int i = 0; i<5; i++){
-        list1.append(arr[i]);
+        list1.push_back(arr[i]);
     }
     for(int i = 0; i<5; i++){
-        list2.append(2*arr[i]);
+        list2.push_back(2*arr[i]);
     }
     list2 = list1;
 
     assert(list2.sum()==list1.sum());
 
-    list1.append(100);
+    list1.push_back(100);
     assert((list2.sum()+100) == list1.sum());
 
     list1 = IntList();

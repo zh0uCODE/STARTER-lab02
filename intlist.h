@@ -10,19 +10,20 @@ public:
 
     // constructor and 3 methods already done in intlist.cpp (NO CHANGE):
     IntList();              // constructor
-    void append(int value); // append value at end of list
     void print() const;     // print values separate by ' '
-    int count() const;      // return count of values
+ 
 
     // destructor, copy constructor and 6 other METHODS YOU MUST 
     // IMPLEMENT IN intlist.cpp (NO CHANGE HERE):
     ~IntList();                      // destructor
     IntList(const IntList& source); //copy constructor (deep copy)
     int sum() const;                 // sum of all values
+    int count() const;               // return count of values
     bool contains(int value) const;  // true if value in list
     int max() const;                 // maximum value
     double average() const;          // average of all values
-    void insertFirst(int value);     // insert new first value
+    void push_front(int value);     // insert value to the front of the list
+    void push_back(int value);      // insert value to the back of the list
 
     IntList& operator=(const IntList& source); //overloaded  (NO CHANGE)
 
@@ -33,10 +34,11 @@ private:
     // definition of Node structure (DO NOT CHANGE):
     struct Node {
         int info;
-        Node *next;
+        Node* next;
     };
 
-    Node *first; // pointer to first node (DO NOT CHANGE):
+    Node* head; // pointer to head node
+    Node* tail; // pointer to the tail node
 };
 
 #endif

@@ -40,9 +40,22 @@ double IntList::average() const {
 }
 
 // inserts value as new node at beginning of list
-void IntList::insertFirst(int value) {
+void IntList::push_front(int value) {
     // IMPLEMENT
 }
+
+// append value at end of list
+void IntList::push_back(int value) {
+    // IMPLEMENT
+ 
+}
+
+// return count of values
+int IntList::count() const {
+   //IMPLEMENT THIS
+   return 0;
+}
+
 
 //Assignment operator should copy the list from the source
 //to this list, deleting/replacing any existing nodes
@@ -51,34 +64,17 @@ IntList& IntList::operator=(const IntList& source){
     return *this;
 }
 
+// constructor sets up empty list
+IntList::IntList(){ 
+    //IMPLEMENT THIS 
+}
 
 
 // DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
 
-// constructor sets up empty list
-IntList::IntList() : first(0) { }
-
-
-// append value at end of list
-void IntList::append(int value) {
-    if (first == 0) { // empty list
-        first = new Node;
-        first->info = value;
-        first->next = 0;
-    }
-    else {
-        Node *n = first;
-        while (n->next) // not last node yet
-            n = n->next;
-        n->next = new Node;
-        n->next->info = value;
-        n->next->next = 0;
-    }
-}
-
 // print values enclose in [], separated by spaces
 void IntList::print() const {
-    Node *n = first;
+    Node *n = head;
     cout << '[';
     while (n) {
         cout << n->info;
@@ -89,13 +85,3 @@ void IntList::print() const {
     cout << ']';
 }
 
-// return count of values
-int IntList::count() const {
-    int result = 0;
-    Node *n = first;
-    while (n) {
-        ++result;
-        n = n->next;
-    }
-    return result;
-}
