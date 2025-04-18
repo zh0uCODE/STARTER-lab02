@@ -70,5 +70,15 @@ int main(int argc, char *argv[]) {
     list2.print();
     cout << endl;
     // Write your own test code for other methods
+    cout << "My Own Test Code" << endl;
+    cout << "Test push_front:" << endl;
+    IntList l1;
+    l1.push_back(1);
+    l1.push_back(2);
+    l1.push_back(3);
+    l1.print();
+    int cnt = l1.count();
+    cout << "Count: " << cnt << endl;
+
     return 0;
 }
