@@ -1,6 +1,6 @@
 // intlist.cpp
 // Implements class IntList
-// YOUR NAME(S), AND DATE
+// Lucas Zhou, 4/17/25
 
 #include "intlist.h"
 
