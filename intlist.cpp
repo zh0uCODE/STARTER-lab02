@@ -132,9 +132,15 @@ IntList& IntList::operator=(const IntList& source){
     if (this == &source) {
       return *this;
     }
+    Node *n = head; //old node (to be removed)
+    while (n != nullptr) {
+      Node *temp = n->next;
+      delete n; //
+      n = temp;
+    }
     head = nullptr;
     tail = nullptr;
-    Node *n = source.head;
+    n = source.head;
     while (n != nullptr) {
       this->push_back(n->info);
       n=n->next;
