@@ -1,6 +1,7 @@
 // testlist.cpp
 // Tests intlist.cpp
-
+// To test memory leak on Mac, I used leaks --atExit -- ./testrest 2 
+//Source: https://www.youtube.com/watch?v=bhhDRm926qA
 #include "intlist.h"
 
 #include <cstdlib> // provides atoi
