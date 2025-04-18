@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
     cout << endl;
     // Write your own test code for other methods
     cout << "My Own Test Code" << endl;
-    cout << "Test push_front:" << endl;
+    cout << "Test push_back:" << endl;
     IntList l1;
     l1.push_back(1);
     l1.push_back(2);
